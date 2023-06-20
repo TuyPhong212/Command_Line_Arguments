@@ -1,0 +1,25 @@
+pipeline {
+    agent any
+    stages {
+        stage("Clean Up"){
+            steps {
+                deleteDir()
+            }
+        }
+        stage("Clone Repo"){
+            steps {
+                sh "git clone https://github.com/cuongmaidt2/Command_Line_Arguments.git"
+            }
+        }
+        stage("Build"){
+            steps {
+                echo "Build Step"
+            }
+        }
+        stage("Test"){
+            steps {
+                echo "Test Step"
+            }
+        }
+    }
+}
