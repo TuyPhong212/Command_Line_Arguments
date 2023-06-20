@@ -17,10 +17,8 @@ pipeline {
         stage('Build') {
             steps {
                 // Thực hiện các lệnh build chương trình C
-                sh '''
-                    cd /var/jenkins_home/workspace/Command_Line_Arguments
-                    gcc -o output Command_Line_Arguments.c
-                '''
+                sh "cd /var/jenkins_home/workspace/Command_Line_Arguments"
+                    //gcc -o output Command_Line_Arguments.c
             }
         }
         
