@@ -45,6 +45,8 @@ pipeline {
                 git add Command_Line_Arguments
                 git commit -m "Command_Line_Arguments"
                 git push -u origin main
+                Username: cuongmaidt2
+                Password: h@ng010292
                 '''
             }
         }
