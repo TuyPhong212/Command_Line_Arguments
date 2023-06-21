@@ -17,7 +17,7 @@ pipeline {
         stage('Build') {
             steps {
                 // Thực hiện các lệnh build chương trình C
-                CMD "gcc Command_Line_Arguments.c -o Command_Line_Arguments"
+                sh "gcc Command_Line_Arguments.c -o Command_Line_Arguments"
             }
         }
         
