@@ -24,8 +24,10 @@ pipeline {
         stage('Test') {
             steps {
                 // Thực hiện các lệnh kiểm tra chương trình C
-                sh "cd /var/jenkins_home/workspace/Command_Line_Arguments/Command_Line_Arguments"
-                sh ".\Command_Line_Arguments Argv1 Argv2"
+                sh '''
+                cd /var/jenkins_home/workspace/Command_Line_Arguments/Command_Line_Arguments
+                ./Command_Line_Arguments Argv1 Argv2
+                '''
             }
         }
     }
