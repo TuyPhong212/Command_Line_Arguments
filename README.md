@@ -1,7 +1,6 @@
 # Command_Line_Arguments
-++++++++++++++++ STEP 1 ++++++++++++++++ 
 Chương trình sử dụng Jenkins Pipeline để build
-đầu tiền tạo file "Dockerfile" để copy Jenkins và thêm GCC trên Jenkins
+# Tạo file "Dockerfile"
 file Dockerfile có nội dung như sau:
 ***************************************************************************
 FROM jenkins/jenkins:lts-jdk11
