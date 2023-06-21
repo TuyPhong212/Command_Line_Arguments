@@ -42,10 +42,9 @@ pipeline {
                 git config --global credential.helper store
                 git config --global user.name "cuongmaidt2"
                 git config --global user.email "cuongmaidt2@users.noreply.github.com"
-                git init
                 git add Command_Line_Arguments
-                git commit -m Command_Line_Arguments
-                git push -u origin main
+                git commit -m "Command_Line_Arguments"
+                git push -u origin https://github.com/cuongmaidt2/Command_Line_Arguments.git
                 '''
             }
         }
