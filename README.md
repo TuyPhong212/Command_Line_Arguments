@@ -1,59 +1,63 @@
 # Command_Line_Arguments
-Chương trình sử dụng Jenkins Pipeline để build
-# Tạo file "Dockerfile"
-file Dockerfile có nội dung như sau:
-***************************************************************************
-FROM jenkins/jenkins:lts-jdk11
-# if we want to install via apt
-USER root
-RUN apt-get update && apt-get install -y build-essential
-# drop back to the regular jenkins user - good practice
-USER jenkins
-***************************************************************************
-Build Doceker image
-docker build -t jenkins/jenkins:lts-jdk11 -f Dockerfile .
-run
-docker run -p 8080:8080 -p 50000:50000 --restart=on-failure -v jenkins_home:/var/jenkins_home jenkins/jenkins:lts-jdk11
+Chương trình sử dụng Jenkins Pipeline để build chương trình C sử dụng GCC
+# Tạo file "Dockerfile" có chưa GCC Compiler
+File Dockerfile có nội dung như sau:
 
-++++++++++++++++ STEP 2 ++++++++++++++++
-Đặng nhập vào Jenkins servers localhost:8080
- tạo Jenkinsfile
- 
-***************************************************************************
- pipeline {
-    agent any
-    
-    stages {
-        stage("Clean Up"){
-            steps {
-                deleteDir()
-            }
-        }
-        stage('Checkout') {
-            steps {
-                // Đặt đường dẫn của mã nguồn chương trình C
-                sh "git clone https://github.com/cuongmaidt2/Command_Line_Arguments.git"
-            }
-        }
+    FROM jenkins/jenkins:lts-jdk11
+    # if we want to install via apt
+    USER root
+    RUN apt-get update && apt-get install -y build-essential
+    # drop back to the regular jenkins user - good practice
+    USER jenkins
+
+# Build Doceker image
+    docker build -t jenkins/jenkins:lts-jdk11 -f Dockerfile .
+# Run And Create Jenkins
+This will store the workspace in /var/jenkins_home. All Jenkins data lives in there - including plugins and configuration. You will probably want to make that an explicit volume so you can manage it and attach to another container for upgrades.
+
+    docker run -p 8080:8080 -p 50000:50000 --restart=on-failure -v jenkins_home:/var/jenkins_home jenkins/jenkins:lts-jdk11
+# Đặng nhập vào Jenkins:
+    Servers localhost:8080
+    Acount: admin
+    Password : get from "/var/jenkins_home/secrets/initialAdminPassword" on Docker Desktop
+# Tạo Jenkinsfile
+     pipeline {
+        agent any
         
-        stage('Build') {
-            steps {
-                // Thực hiện các lệnh build chương trình C
-                sh "gcc -o /var/jenkins_home/workspace/Command_Line_Arguments/Command_Line_Arguments/Command_Line_Arguments /var/jenkins_home/workspace/Command_Line_Arguments/Command_Line_Arguments/Command_Line_Arguments.c"
+        stages {
+            stage("Clean Up"){
+                steps {
+                    deleteDir()
+                }
             }
-        }
-        
-        stage('Test') {
-            steps {
-                // Thực hiện các lệnh kiểm tra chương trình C
-                sh '''
-                cd /var/jenkins_home/workspace/Command_Line_Arguments/Command_Line_Arguments
-                ./Command_Line_Arguments Argv1 Argv2
-                '''
+            stage('Checkout') {
+                steps {
+                    // Đặt đường dẫn của mã nguồn chương trình C
+                    sh "git clone https://github.com/cuongmaidt2/Command_Line_Arguments.git"
+                }
+            }
+            
+            stage('Build') {
+                steps {
+                    // Thực hiện các lệnh build chương trình C
+                    sh '''
+                    cd /var/jenkins_home/workspace/Command_Line_Arguments/Command_Line_Arguments
+                    gcc -o Command_Line_Arguments Command_Line_Arguments.c
+                    '''
+                }
+            }
+            
+            stage('Test') {
+                steps {
+                    // Thực hiện các lệnh kiểm tra chương trình C
+                    sh '''
+                    cd /var/jenkins_home/workspace/Command_Line_Arguments/Command_Line_Arguments
+                    ./Command_Line_Arguments Argv1 Argv2
+                    '''
+                }
             }
         }
     }
-}
 
-***************************************************************************
+
 
