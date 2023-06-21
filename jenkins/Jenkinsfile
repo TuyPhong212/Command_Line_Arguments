@@ -39,12 +39,12 @@ pipeline {
                 // Thực hiện các push file đã biên dịch lên GIT
                 sh '''
                 cd /var/jenkins_home/workspace/Command_Line_Arguments/Command_Line_Arguments
-                echo $(git remote -v)
+                echo $(git remote set-url origin git@github.com:<cuongmaidt2>/<Command_Line_Arguments>.git)
                 git config --global user.name "cuongmaidt2"
                 git config --global user.email "cuongmaidt2@users.noreply.github.com"
                 git add Command_Line_Arguments
                 git commit -m Command_Line_Arguments
-                git push -u https://github.com/cuongmaidt2/Command_Line_Arguments.git main
+                git push -u original main
                 '''
             }
         }
