@@ -43,7 +43,6 @@ pipeline {
                 git config --global user.email "maicuong.qt212@gmail.com"
                 git add Command_Line_Arguments
                 git commit -m Command_Line_Arguments
-                git remote add origin https://github.com/cuongmaidt2/Command_Line_Arguments.git
                 git push -u origin main
                 '''
             }
