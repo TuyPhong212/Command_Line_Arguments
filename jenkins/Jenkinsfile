@@ -24,7 +24,7 @@ pipeline {
         stage('Test') {
             steps {
                 // Thực hiện các lệnh kiểm tra chương trình C
-                sh './output'
+                sh './Command_Line_Arguments Argv1 Argv2'
             }
         }
     }
