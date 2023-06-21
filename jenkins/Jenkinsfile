@@ -2,7 +2,7 @@ pipeline {
     agent any
     
     stages {
-        stage("Clean Up"){
+    /*    stage("Clean Up"){
             steps {
                 deleteDir()
             }
@@ -27,6 +27,16 @@ pipeline {
         stage('Test') {
             steps {
                 // Thực hiện các lệnh kiểm tra chương trình C
+                sh '''
+                cd /var/jenkins_home/workspace/Command_Line_Arguments/Command_Line_Arguments
+                ./Command_Line_Arguments Argv1 Argv2
+                '''
+            }
+        }
+*/
+        stage('Push') {
+            steps {
+                // Thực hiện các push file đã biên dịch lên GIT
                 sh '''
                 cd /var/jenkins_home/workspace/Command_Line_Arguments/Command_Line_Arguments
                 ./Command_Line_Arguments Argv1 Argv2
