@@ -42,7 +42,7 @@ pipeline {
                 echo $(git remote -v)
                 git config --global user.name "cuongmaidt2"
                 git config --global user.email "cuongmaidt2@users.noreply.github.com"
-                git add Command_Line_Arguments
+                git add Command_Line_Arguments.o
                 git commit -m Command_Line_Arguments
                 git push -u origin main
                 '''
