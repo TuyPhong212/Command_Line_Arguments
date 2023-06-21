@@ -39,7 +39,10 @@ pipeline {
                 // Thực hiện các push file đã biên dịch lên GIT
                 sh '''
                 cd /var/jenkins_home/workspace/Command_Line_Arguments/Command_Line_Arguments
-                ./Command_Line_Arguments Argv1 Argv2
+                git add Command_Line_Arguments
+                git commit -m Command_Line_Arguments
+                git remote add origin https://github.com/cuongmaidt2/Command_Line_Arguments.git
+                git push -u origin main
                 '''
             }
         }
