@@ -1,4 +1,4 @@
-pipeline {
+ pipeline {
     agent any
     
     stages {
@@ -45,6 +45,7 @@ pipeline {
                 cd /var/jenkins_home/workspace/Command_Line_Arguments/Command_Line_Arguments
                 git add Command_Line_Arguments
                 git commit -m "Command_Line_Arguments"
+                echo $(git checkout main)
                 git push -u origin main
                 '''
             }
