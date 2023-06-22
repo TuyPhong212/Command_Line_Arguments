@@ -38,7 +38,7 @@
             steps {
                 // Thực hiện các push file đã biên dịch lên GIT
                 sh '''
-                git config --global url."https://x:${SHA256:FN17/o9oF9jM3IRT21ZepCcgAEbqZoOTI+YnGYvjF1o}@github.com".insteadOf "https://github.com"
+                git config --global url.https://x:${SHA256:FN17/o9oF9jM3IRT21ZepCcgAEbqZoOTI+YnGYvjF1o}@github.com.insteadOf "https://github.com"
                 git config --global user.name cuongmaidt2
                 git config --global user.email cuongmaidt2@users.noreply.github.com
                 cd /var/jenkins_home/workspace/Command_Line_Arguments/Command_Line_Arguments
