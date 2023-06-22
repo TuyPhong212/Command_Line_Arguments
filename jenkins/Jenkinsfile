@@ -41,7 +41,7 @@
                 cd /var/jenkins_home/workspace/Command_Line_Arguments/Command_Line_Arguments
                 git add Command_Line_Arguments
                 git commit -m "Command_Line_Arguments"
-                git credential-cache erase
+                echo $(git credential-cache erase)
                 git push -u origin main
                 '''
             }
