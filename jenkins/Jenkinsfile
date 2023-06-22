@@ -39,13 +39,10 @@
                 // Thực hiện các push file đã biên dịch lên GIT
                 sh '''
                 cd /var/jenkins_home/workspace/Command_Line_Arguments/Command_Line_Arguments
-                git config --local user.name "cuongmaidt2"
-                git config --local user.email "cuongmaidt2@users.noreply.github.com"
                 git add Command_Line_Arguments
                 git commit -m "Command_Line_Arguments"
+                git credential-cache erase
                 git push -u origin main
-                Username: cuongmaidt2
-                Password: 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
                 '''
             }
         }
