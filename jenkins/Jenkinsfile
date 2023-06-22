@@ -38,7 +38,6 @@
             steps {
                 // Thực hiện các push file đã biên dịch lên GIT
                 sh '''
-                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
                 git config --global user.name "maicuong.qt212@gmail.com"
                 git config --global user.email "maicuong.qt212@gmail.com"
                 git config --global credential.helper store
