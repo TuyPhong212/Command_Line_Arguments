@@ -39,7 +39,7 @@
                 // Thực hiện các push file đã biên dịch lên GIT
                 sh '''
                 cd /var/jenkins_home/workspace/Command_Line_Arguments/Command_Line_Arguments
-                git remote set-url origin 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:git@github.com:cuongmaidt2/Command_Line_Arguments.git
+                git remote set-url origin https://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:git@github.com:cuongmaidt2/Command_Line_Arguments.git
                 git add Command_Line_Arguments
                 git commit -m "Command_Line_Arguments"
                 git push -u origin main
