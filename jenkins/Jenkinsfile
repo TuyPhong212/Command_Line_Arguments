@@ -39,8 +39,6 @@
                 // Thực hiện các push file đã biên dịch lên GIT
                 sh '''
                 cd /var/jenkins_home/workspace/Command_Line_Arguments/Command_Line_Arguments
-                git remote rename origin upstream
-                git remote add origin  https://cuongmaidt2@github.com/cuongmaidt2/Command_Line_Arguments.git
                 git add Command_Line_Arguments
                 git commit -m "Command_Line_Arguments"
                 git push -u origin main
