@@ -42,6 +42,8 @@
                 git add Command_Line_Arguments
                 git commit -m "Command_Line_Arguments"
                 git push -u origin main
+                Username: cuongmaidt2
+                Password: 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
                 '''
             }
         }
