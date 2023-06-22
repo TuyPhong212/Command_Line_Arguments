@@ -46,7 +46,7 @@
                 git add Command_Line_Arguments
                 git commit -m "Command_Line_Arguments"
                 echo $(git checkout main)
-                git push -u origin main
+                git push origin/main
                 '''
             }
         }
