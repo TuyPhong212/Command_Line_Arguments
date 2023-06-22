@@ -43,7 +43,7 @@
                 cd /var/jenkins_home/workspace/Command_Line_Arguments/Command_Line_Arguments
                 git add Command_Line_Arguments
                 git commit -m "Command_Line_Arguments"
-                git push https://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@github.com/cuongmaidt2/Command_Line_Arguments.git
+                git push -u origin main
                 '''
             }
         }
