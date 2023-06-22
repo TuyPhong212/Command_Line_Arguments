@@ -44,7 +44,6 @@ pipeline {
                 cd /var/jenkins_home/workspace/Command_Line_Arguments/Command_Line_Arguments
                 git add Command_Line_Arguments
                 git commit -m "Command_Line_Arguments"
-                git push -u origin "https://github.com/cuongmaidt2/Command_Line_Arguments.git"
                 git push -u origin main
                 '''
             }
