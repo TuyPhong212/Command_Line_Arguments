@@ -38,10 +38,10 @@
             steps {
                 // Thực hiện các push file đã biên dịch lên GIT
                 sh '''
+                cd /var/jenkins_home/workspace/Command_Line_Arguments/Command_Line_Arguments
                 git config --global user.email "cuongmaidt2@users.noreply.github.com"
                 git config --global user.name "cuongmaidt2"
                 git remote set-url origin https://cuongmaidt2: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@github.com/cuongmaidt2/<Command_Line_Arguments>.git
-                cd /var/jenkins_home/workspace/Command_Line_Arguments/Command_Line_Arguments
                 git add Command_Line_Arguments
                 git commit -m "Command_Line_Arguments"
                 git push -u origin main
