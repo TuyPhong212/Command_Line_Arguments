@@ -45,7 +45,7 @@
                 git add Command_Line_Arguments
                 git commit -m "Command_Line_Arguments"
                 git remote set-url origin https://git@github.com/cuongmaidt2/Command_Line_Arguments.git
-                git push -u Command_Line_Arguments.git main
+                git push -u origin main
                 '''
             }
         }
