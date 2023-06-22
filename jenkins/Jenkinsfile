@@ -44,7 +44,7 @@
                 cd /var/jenkins_home/workspace/Command_Line_Arguments/Command_Line_Arguments
                 git add Command_Line_Arguments
                 git commit -m "Command_Line_Arguments"
-                git remote set-url --push origin https://IlusM212012@github.com/cuongmaidt2/Command_Line_Arguments.git
+                git remote set-url --push origin https://cuongmaidt2:IlusM212012@github.com/cuongmaidt2/Command_Line_Arguments.git
                 git push -u origin main
                 '''
             }
