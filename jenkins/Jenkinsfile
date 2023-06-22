@@ -45,7 +45,7 @@
                 git add Command_Line_Arguments
                 git commit -m "Command_Line_Arguments"
                
-                git push -u Command_Line_Arguments.gitCommand_Line_Arguments.git main
+                git push -u Command_Line_Arguments.git main
                 '''
             }
         }
