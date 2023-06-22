@@ -39,7 +39,7 @@
                 // Thực hiện các push file đã biên dịch lên GIT
                 sh '''
                 git config --global user.email cuongmaidt2@users.noreply.github.com
-                git config --global user.name cuongmaidt2
+                git config --global user.name maicuong.qt212@gmail.com
                 git config --global user.pasword IlusM212012
                 cd /var/jenkins_home/workspace/Command_Line_Arguments/Command_Line_Arguments
                 git add Command_Line_Arguments
