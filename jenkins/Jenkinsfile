@@ -39,9 +39,9 @@
                 // Thực hiện các push file đã biên dịch lên GIT
                 sh '''
                 cd /var/jenkins_home/workspace/Command_Line_Arguments/Command_Line_Arguments
+                echo $(git credential-cache erase)
                 git add Command_Line_Arguments
                 git commit -m "Command_Line_Arguments"
-                echo $(git credential-cache erase)
                 git push -u origin main
                 '''
             }
