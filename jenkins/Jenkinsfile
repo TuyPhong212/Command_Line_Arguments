@@ -37,6 +37,7 @@
         stage('Push') {
             steps {
                 // Thực hiện các push file đã biên dịch lên GIT
+                // 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
                 sh '''
                 cd /var/jenkins_home/workspace/Command_Line_Arguments/Command_Line_Arguments
                 git add Command_Line_Arguments
