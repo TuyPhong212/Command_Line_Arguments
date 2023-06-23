@@ -10,7 +10,7 @@
         stage('Checkout') {
             steps {
                 // Đặt đường dẫn của mã nguồn chương trình C
-                sh "git clone https://github.com/cuongmaidt2/Command_Line_Arguments.git"
+                sh "git clone https://github.com/TuyPhong212/Command_Line_Arguments.git"
             }
         }
         
