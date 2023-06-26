@@ -21,7 +21,7 @@ This will store the workspace in /var/jenkins_home. All Jenkins data lives in th
     Acount: admin
     Password : get from "/var/jenkins_home/secrets/initialAdminPassword" on Docker Desktop
 # Tạo Jenkinsfile
-     pipeline {
+          pipeline {
         agent any
         
         stages {
@@ -33,7 +33,7 @@ This will store the workspace in /var/jenkins_home. All Jenkins data lives in th
             stage('Checkout') {
                 steps {
                     // Đặt đường dẫn của mã nguồn chương trình C
-                    sh "git clone https://github.com/cuongmaidt2/Command_Line_Arguments.git"
+                    sh "git clone https://github.com/TuyPhong212/Command_Line_Arguments.git"
                 }
             }
             
@@ -41,7 +41,7 @@ This will store the workspace in /var/jenkins_home. All Jenkins data lives in th
                 steps {
                     // Thực hiện các lệnh build chương trình C
                     sh '''
-                    cd /var/jenkins_home/workspace/Command_Line_Arguments/Command_Line_Arguments
+                    cd $PWD/Command_Line_Arguments
                     gcc -o Command_Line_Arguments Command_Line_Arguments.c
                     '''
                 }
@@ -51,13 +51,27 @@ This will store the workspace in /var/jenkins_home. All Jenkins data lives in th
                 steps {
                     // Thực hiện các lệnh kiểm tra chương trình C
                     sh '''
-                    cd /var/jenkins_home/workspace/Command_Line_Arguments/Command_Line_Arguments
+                    cd $PWD/Command_Line_Arguments
                     ./Command_Line_Arguments Argv1 Argv2
+                    '''
+                }
+            }
+    
+            stage('Push') {
+                steps {
+                    // Thực hiện các push file đã biên dịch lên GIT
+                    // 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
+                    sh '''
+                    cd $PWD/Command_Line_Arguments
+                    git add Command_Line_Arguments
+                    git commit -m "Command_Line_Arguments"
+                    git push -u origin main
+                    Username for 'https://github.com':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
                     '''
                 }
             }
         }
     }
-
+    // git remote set-url origin https://SHA256:IN85Yt0fecgcWOJMmcoj9Tc24pu0wAkBCjoT3XzGEaw@github.com/cuongmaidt2/Command_Line_Arguments.git
 
 
