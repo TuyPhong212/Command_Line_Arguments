@@ -21,7 +21,7 @@ This will store the workspace in /var/jenkins_home. All Jenkins data lives in th
     Acount: admin
     Password : get from "/var/jenkins_home/secrets/initialAdminPassword" on Docker Desktop
 # Tạo Jenkinsfile
-          pipeline {
+     pipeline {
         agent any
         
         stages {
@@ -73,5 +73,6 @@ This will store the workspace in /var/jenkins_home. All Jenkins data lives in th
         }
     }
     // git remote set-url origin https://SHA256:IN85Yt0fecgcWOJMmcoj9Tc24pu0wAkBCjoT3XzGEaw@github.com/cuongmaidt2/Command_Line_Arguments.git
+
 
 
