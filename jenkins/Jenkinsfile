@@ -19,7 +19,7 @@
                 // Thực hiện các lệnh build chương trình C
                 sh '''
                 echo "$PWD"
-                cd /var/jenkins_home/workspace/Command_Line_Arguments/Command_Line_Arguments
+                cd $PWD/Command_Line_Arguments
                 gcc -o Command_Line_Arguments Command_Line_Arguments.c
                 '''
             }
