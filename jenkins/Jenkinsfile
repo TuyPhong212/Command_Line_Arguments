@@ -60,11 +60,13 @@
        failure {
         //body: "Something is wrong with ${env.BUILD_URL}\nhrrrrrrrrrrr"
            echo 'I failure !'
+        emailext attachLog: true, body: '"Something is wrong with ${env.BUILD_URL}"', compressLog: true, subject: '"Build Failed in Jenkins Pipeline: ${currentBuild.fullDisplayName}"', to: 'cuongmv21@gmail.com'
+        /*
            emailext to: 'cuongmv21@gmail.com',
                 attachLog: true,
                 subject: "Build Failed in Jenkins Pipeline: ${currentBuild.fullDisplayName}",
                 body: "Something is wrong with ${env.BUILD_URL}",
-                compressLog: true
+                compressLog: true*/
        }
       changed {
                        echo 'I succeeded!'
