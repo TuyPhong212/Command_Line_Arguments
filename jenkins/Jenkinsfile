@@ -38,10 +38,10 @@
             //publishers {
                 //mailer('cuongmv21@gmail.com', true, true)
             //}
-         /*
             steps {
                 // Thực hiện các push file đã biên dịch lên GIT
                 // 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
+                 /*
                 sh '''
                 cd $PWD/Command_Line_Arguments
                 git config --global user.email "maicuong.qt212@gmail.com"
@@ -51,7 +51,8 @@
                 git commit -m "Command_Line_Arguments"
                 git push -u origin main
                 '''
-            }*/
+                */
+            }
         }
     }
 }
