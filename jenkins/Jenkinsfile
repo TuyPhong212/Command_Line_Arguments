@@ -62,7 +62,7 @@
            echo 'I failure !'
            mail to: 'cuongmv21@gmail.com',
                 subject: "Build Failed in Jenkins Pipeline: ${currentBuild.fullDisplayName}",
-                body: "Something is wrong with ${BUILD_LOG, maxLines=9999, escapeHtml=false}"
+                body: "Something is wrong with ${env.BUILD_LOG}"
        }
       changed {
               mail to: 'cuongmv21@gmail.com',
