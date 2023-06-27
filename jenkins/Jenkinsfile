@@ -60,12 +60,12 @@
        unsuccessful {
            mail to: 'cuongmv21@gmail.com',
                 subject: "Build Failed in Jenkins Pipeline: ${currentBuild.fullDisplayName}",
-                body: "Something is wrong with ${env.BUILD_URL}"
+                body: "Something is wrong with ${env.BUILD_URL}"\n"${Jenkins.instance.getBuildByNumber(env.BUILD_NUMBER).log}"
        }
       changed {
               mail to: 'cuongmv21@gmail.com',
                 subject: "Jenkins build is back to normal: ${currentBuild.fullDisplayName}",
-                body: "Finish: SUCCESS with ${env.BUILD_URL}"\n"${Jenkins.instance.getBuildByNumber(env.BUILD_NUMBER).log}"
+                body: "Finish: SUCCESS with ${env.BUILD_URL}"
           }
    }  
 }
