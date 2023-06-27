@@ -57,12 +57,12 @@
        success {
                echo 'I succeeded!'
            }
-       unstable {
+       failure {
         //body: "Something is wrong with ${env.BUILD_URL}\nhrrrrrrrrrrr"
            echo 'I failure !'
            mail to: 'cuongmv21@gmail.com',
                 subject: "Build Failed in Jenkins Pipeline: ${currentBuild.fullDisplayName}",
-                body: "Something is wrong with ${env.BUILD_URL}"
+                body: "Something is wrong with ${env.BUILD_LOG}"
        }
       changed {
               mail to: 'cuongmv21@gmail.com',
