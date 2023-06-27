@@ -62,12 +62,15 @@
            echo 'I failure !'
            mail to: 'cuongmv21@gmail.com',
                 subject: "Build Failed in Jenkins Pipeline: ${currentBuild.fullDisplayName}",
-                body: "${env.BUILD_LOG}"
+                body: "Something is wrong with ${env.BUILD_URL}"
        }
       changed {
-              mail to: 'cuongmv21@gmail.com',
-                subject: "Jenkins build is back to normal: ${currentBuild.fullDisplayName}",
-                body: "Finish: SUCCESS with ${env.BUILD_URL}"
+              success {
+                       echo 'I succeeded!'
+                       mail to: 'cuongmv21@gmail.com',
+                        subject: "Jenkins build is back to normal: ${currentBuild.fullDisplayName}",
+                        body: "Finish: SUCCESS with ${env.BUILD_URL}"
+                   }
           }
    }  
 }
