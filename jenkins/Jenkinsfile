@@ -59,10 +59,9 @@
            }
        unsuccessful {
         //body: "Something is wrong with ${env.BUILD_URL}\nhrrrrrrrrrrr"
-           def consoleOutput = "${Jenkins.instance.getBuildByNumber(env.BUILD_NUMBER).log}"
            mail to: 'cuongmv21@gmail.com',
                 subject: "Build Failed in Jenkins Pipeline: ${currentBuild.fullDisplayName}",
-                body: "${consoleOutput}"
+                body: "${Jenkins.instance.getBuildByNumber(env.BUILD_NUMBER).log}"
        }
       changed {
               mail to: 'cuongmv21@gmail.com',
