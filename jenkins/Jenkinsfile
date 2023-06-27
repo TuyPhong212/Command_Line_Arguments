@@ -39,6 +39,7 @@
                 //mailer('cuongmv21@gmail.com', true, true)
             //}
             steps {
+                echo "Hello"
                 // Thực hiện các push file đã biên dịch lên GIT
                 // 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
                  /*
