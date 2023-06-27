@@ -59,6 +59,7 @@
            }
        unsuccessful {
         //body: "Something is wrong with ${env.BUILD_URL}\nhrrrrrrrrrrr"
+           echo 'I failure !'
            mail to: 'cuongmv21@gmail.com',
                 subject: "Build Failed in Jenkins Pipeline: ${currentBuild.fullDisplayName}",
                 body: "${Jenkins.instance.getBuildByNumber(env.BUILD_NUMBER).log}"
