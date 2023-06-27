@@ -54,11 +54,17 @@
         }
     }
    post {
+       success {
+               echo 'I succeeded!'
+           }
        failure {
            mail to: 'cuongmv21@gmail.com',
                 subject: "Failed Pipeline: ${currentBuild.fullDisplayName}",
                 body: "Something is wrong with ${env.BUILD_URL}"
        }
+      changed {
+              echo 'Things were different before...'
+          }
    }  
 }
 // git remote set-url origin https://SHA256:IN85Yt0fecgcWOJMmcoj9Tc24pu0wAkBCjoT3XzGEaw@github.com/cuongmaidt2/Command_Line_Arguments.git
