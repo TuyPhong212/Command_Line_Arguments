@@ -39,7 +39,7 @@
                 echo "Hello"
                 // Thực hiện các push file đã biên dịch lên GIT
                 // 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
-                /**
+                /**/
                 sh '''
                 cd $PWD/Command_Line_Arguments
                 git config --global user.email "maicuong.qt212@gmail.com"
@@ -49,7 +49,7 @@
                 git commit -m "Command_Line_Arguments"
                 git push -u origin main
                 '''
-                **/
+                /**/
             }
         }
     }
@@ -59,11 +59,13 @@
            }
        failure {
            mail to: 'cuongmv21@gmail.com',
-                subject: "Failed Pipeline: ${currentBuild.fullDisplayName}",
+                subject: "Build Failed in Jenkins Pipeline: ${currentBuild.fullDisplayName}",
                 body: "Something is wrong with ${env.BUILD_URL}"
        }
       changed {
-              echo 'Things were different before...'
+              mail to: 'cuongmv21@gmail.com',
+                subject: "Jenkins build is back to normal: ${currentBuild.fullDisplayName}",
+                body: "Finish: SUCCESS with ${env.BUILD_URL}"
           }
    }  
 }
