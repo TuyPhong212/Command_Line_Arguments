@@ -60,7 +60,7 @@
        unsuccessful {
            mail to: 'cuongmv21@gmail.com',
                 subject: "Build Failed in Jenkins Pipeline: ${currentBuild.fullDisplayName}",
-                body: "Something is wrong with ${env.BUILD_URL}\n${Jenkins.instance.getBuildByNumber(env.BUILD_NUMBER).log}"
+                body: "Something is wrong with ${env.BUILD_URL}\nhrrrrrrrrrrr"
        }
       changed {
               mail to: 'cuongmv21@gmail.com',
