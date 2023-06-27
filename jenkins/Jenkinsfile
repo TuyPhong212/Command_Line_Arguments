@@ -65,12 +65,10 @@
                 body: "Something is wrong with ${env.BUILD_URL}"
        }
       changed {
-              success {
                        echo 'I succeeded!'
                        mail to: 'cuongmv21@gmail.com',
                         subject: "Jenkins build is back to normal: ${currentBuild.fullDisplayName}",
                         body: "Finish: SUCCESS with ${env.BUILD_URL}"
-                   }
           }
    }  
 }
