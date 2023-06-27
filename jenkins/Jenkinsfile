@@ -42,6 +42,7 @@
                 cd $PWD/Command_Line_Arguments
                 git config --global user.email "maicuong.qt212@gmail.com"
                 git config --global user.name "TuyPhong212"
+                git config remote.origin.url https://github.com/TuyPhong212/Command_Line_Arguments.git
                 git add Command_Line_Arguments
                 git commit -m "Command_Line_Arguments"
                 git push -u origin main
