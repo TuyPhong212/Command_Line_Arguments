@@ -43,7 +43,6 @@
                 git add Command_Line_Arguments
                 git commit -m "Command_Line_Arguments"
                 git push -u origin main
-                Username for 'https://github.com':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
                 '''
             }
         }
