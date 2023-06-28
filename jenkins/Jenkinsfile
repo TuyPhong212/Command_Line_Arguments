@@ -48,7 +48,7 @@ pipeline {
                 git config remote.origin.url https://github.com/TuyPhong212/Command_Line_Arguments.git
                 git add Command_Line_Arguments
                 git commit -m "Command_Line_Arguments"
-                git push -u origin main
+                git push -u branch: 'main', credentialsId: 'git_user', url: 'https://github.com/TuyPhong212/Command_Line_Arguments.git'
                 '''
                 /**/
             }
