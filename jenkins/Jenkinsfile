@@ -41,9 +41,9 @@ pipeline {
                 // Thực hiện các push file đã biên dịch lên GIT
                 // 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
                 /**/
+                echo sh" git status"
                 sh '''
                 cd $PWD/Command_Line_Arguments
-                echo " sh" git status" "
                 git config --global user.email "maicuong.qt212@gmail.com"
                 git config --global user.name "TuyPhong212"
                 git config remote.origin.url https://github.com/TuyPhong212/Command_Line_Arguments.git
